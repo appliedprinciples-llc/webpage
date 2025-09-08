@@ -13,10 +13,6 @@ out/
 # Log files
 *.log
 
-# Dependency lock files (if not explicitly managed)
-package-lock.json
-yarn.lock
-
 # Editor and OS specific files
 .DS_Store
 Thumbs.db
