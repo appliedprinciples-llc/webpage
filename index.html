@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>appliedprinciples-llc.com</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="./src/assets/css/main.css"/>
+</head>
+
+<body class="is-preload">
+<div id="container">
+    <div id="top-of-page">
+        <!-- The video -->
+        <video autoplay muted loop id="backgroundVideo">
+            <source src="./src/assets/media/nightSky.mp4" type="video/mp4">
+        </video>
+
+        <div id="overlay">
+            <!-- Header -->
+            <header id="header">
+                <h2>APPLIED PRINCIPLES CONSULTING LLC</h2>
+                <p>Adapting solutions for the context of your organization.</p>
+            </header>
+            <div id="launch-message">
+                <h1>Launching Soon</h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="bottom-of-page">
+        <!-- Contact Form -->
+        <div id="contact">
+            <div id="contact-message">
+                <h1>Contact Us</h1>
+            </div>
+            <form method="POST" id="contact-form">
+                <!-- Replace with your Access Key -->
+                <input type="hidden" name="access_key" value="efeac8c4-4561-49dd-a30e-2aeb9f32b27c">
+
+                <!-- Form Inputs. Each input must have a name="" attribute -->
+                <div class="name-group">
+                    <input id="name" type="text" class="name-input" name="name" placeholder=" " required></input>
+                    <label for="name" id="username" class="name-label">Name</label>
+                </div>
+
+                <div class="email-group">
+                    <input id="email" type="email" class="email-input" name="email" placeholder=" " required></input>
+                    <label for="email" id="emailAddress" class="email-label">Email</label>
+                </div>
+
+                <div class="message-group">
+                    <textarea id="message" name="message" class="message-input" placeholder="Message" required></textarea>
+                    <label for="message" id="messageBox" class="message-label"></label>
+                </div>
+
+                <!-- Honeypot Spam Protection -->
+                <div class="honey-group">
+                    <label></label>
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                </div>
+
+                <div class="submit">
+                    <button type="submit">Send</button>
+                </div>
+
+                <div id="result"></div>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="copyright">
+                <li>&copy; Applied Principles Consulting LLC 2025</li>
+            </ul>
+        </footer>
+    </div>
+</div>
+
+<script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

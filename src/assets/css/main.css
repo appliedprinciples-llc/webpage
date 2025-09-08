@@ -1,0 +1,468 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+@import url("https://fonts.googleapis.com/css?family=Playfair Display:400,700");
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    box-sizing: inherit;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+}
+
+#top-of-page {
+    position: relative; /* Needed for positioning the video and overlay */
+    height: 50dvh; /* 50% of the viewport height */
+    width: 100%;
+    overflow: hidden; /* Hide overflowing video parts */
+    display: flex; /* Use flexbox for centering content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    color: white; /* Text color for content over video */
+    text-align: center;
+}
+
+/* Style the video background: 100% width and height to cover the entire window */
+#backgroundVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Place video behind content */
+    transform: translate(-50%, -50%); /* Center the video */
+    object-fit: cover; /* Ensure video covers the entire area */
+}
+
+#overlay {
+    z-index: 1; /* Keep content above the video */
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0.0); /* Optional: Semi-transparent background for readability */
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#bottom-of-page {
+    height: 50dvh; /* 50% of the viewport height */
+    background-color: rgba(0, 0, 0, 1); /* Example background color */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+
+#launch-message, #contact-message {
+    h1 {
+        font-weight: 20;
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 2em;
+        margin-block-start: 0.67em;
+        margin-block-end: 0.67em;
+        transform: scaleY(1.25); /* Adjust the value to control height */
+        display: inline-block;
+    }
+}
+
+#contact-message h1 {
+    color: rgb(150, 150, 150);
+}
+
+footer, header {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    -ms-overflow-style: scrollbar;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #000;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+@media screen and (max-width: 480px) {
+    html, body {
+        min-width: 320px;
+    }
+}
+
+@media screen and (max-height: 640px) {
+    html, body {
+        height: auto;
+        min-height: 100%;
+    }
+}
+
+html {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body.is-preload *, body.is-preload *:before, body.is-preload *:after {
+    -moz-animation: none !important;
+    -webkit-animation: none !important;
+    animation: none !important;
+    -moz-transition: none !important;
+    -webkit-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important;
+}
+
+body > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Type */
+body, input, select, textarea {
+    color: rgba(255, 255, 255, 0.75);
+    font-family: "Roboto", sans-serif;
+    font-size: 16pt;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.65em;
+}
+
+@media screen and (max-width: 1680px) {
+    body, input, select, textarea {
+        font-size: 12pt;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    body, input, select, textarea {
+        font-size: 11pt;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    body, input, select, textarea {
+        font-size: 12pt;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    body, input, select, textarea {
+        font-size: 12pt;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body, input, select, textarea {
+        font-size: 12pt;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+    font-weight: 700;
+    line-height: 1em;
+    margin: 0 0 1em 0;
+}
+
+
+h1 {
+    font-size: 2.5em;
+    line-height: 1.25em;
+}
+
+h2 {
+    font-size: 1.75em;
+    line-height: 1.5em;
+}
+
+h3 {
+    font-size: 1.35em;
+    line-height: 1.5em;
+}
+
+h4 {
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+
+h5 {
+    font-size: 0.9em;
+    line-height: 1.5em;
+}
+
+h6 {
+    font-size: 0.7em;
+    line-height: 1.5em;
+}
+
+sub {
+    font-size: 0.8em;
+    position: relative;
+    top: 0.5em;
+}
+
+sup {
+    font-size: 0.8em;
+    position: relative;
+    top: -0.5em;
+}
+
+header p {
+    color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    margin: 0 0 1.5em 0;
+}
+
+header h2 + p {
+    font-size: 1.25em;
+    margin-top: -1em;
+    line-height: 1.5em;
+}
+
+header h3 + p {
+    font-size: 1.1em;
+    margin-top: -0.8em;
+    line-height: 1.5em;
+}
+
+header h4 + p,
+header h5 + p,
+header h6 + p {
+    font-size: 0.9em;
+    margin-top: -0.6em;
+    line-height: 1.5em;
+}
+
+@media screen and (max-width: 980px) {
+    header br {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    header br {
+        display: inline;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header br {
+        display: none;
+    }
+}
+
+/* Header */
+#header h1 {
+    font-size: 3.25em;
+    margin: 0 0 0.55em 0;
+}
+
+#header p {
+    font-size: 1.35em;
+    line-height: 1.65em;
+}
+
+
+@media screen and (max-width: 736px) {
+    #header h1 {
+        font-size: 2em;
+    }
+
+    #header p {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #header {
+        margin: 0 0 1em 0;
+    }
+}
+
+#launch-message {
+    text-align: center;
+}
+
+#contact {
+    text-align: center;
+}
+
+/* Form */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.name-group, .email-group, .message-group {
+    position: relative; /* Essential for positioning the label */
+    margin-bottom: 20px;
+}
+
+.name-input, .email-input, .message-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 16px;
+    color: white;
+    background-color: black;
+}
+
+.name-input, .email-input {
+    /* Hide the default placeholder */
+    &::placeholder {
+        color: transparent;
+    }
+}
+
+.message-input {
+    &::placeholder {
+        color: rgba(255, 255, 255, 0.75);; /* Sets the placeholder text color to red */
+    }
+}
+
+.name-label, .email-label {
+    position: absolute;
+    top: 10px; /* Adjust to vertically center in the input */
+    left: 10px; /* Adjust to horizontally align in the input */
+    pointer-events: none; /* Allows clicks to pass through to the input */
+}
+
+/* When the input is focused or has content, move the label */
+.name-input:focus + .name-label,
+.name-input:not(:placeholder-shown) + .name-label {
+    top: -10px; /* Move above the input */
+    left: 5px; /* Adjust horizontal position */
+    font-size: 12px; /* Shrink the font size */
+    color: rgb(128, 128, 128);
+    background-color: black; /* Optional: to cover the input border */
+    padding: 0 5px; /* Optional: to create a "cutout" effect */
+}
+
+.email-input:focus + .email-label,
+.email-input:not(:placeholder-shown) + .email-label {
+    top: -10px; /* Move above the input */
+    left: 5px; /* Adjust horizontal position */
+    font-size: 12px; /* Shrink the font size */
+    color: rgb(128, 128, 128);
+    background-color: black; /* Optional: to cover the input border */
+    padding: 0 5px; /* Optional: to create a "cutout" effect */
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 40rem black inset !important; /* Replace #yourColor with your desired background color */
+    -webkit-text-fill-color: white !important; /* Optionally, change the text color */
+}
+
+.submit button {
+    font-family: "Source Sans Pro", arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: black;
+    background-color: white;
+    border-radius: 6px;
+    min-height: 56px;
+    padding: 8px 32px;
+    align-items: center;
+    display: inline-flex;
+    border-style: none;
+    text-transform: uppercase;
+    letter-spacing: 0.071em;
+    cursor: pointer;
+}
+
+/* Footer */
+#footer {
+    -moz-transition: opacity 0.5s ease-in-out;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    bottom: 4em;
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 0.5;
+    text-align: center;
+}
+
+#footer .copyright {
+    font-size: 0.8em;
+    list-style: none;
+    padding: 0;
+}
+
+#footer .copyright li {
+    border-left: solid 1px rgba(255, 255, 255, 0.25);
+    display: inline-block;
+    line-height: 1em;
+    margin: 0 0 0 0.75em;
+    padding: 0 0 0 0.75em;
+}
+
+#footer .copyright li:first-child {
+    border-left: 0;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#footer:hover {
+    opacity: 1;
+}
+
+#footer > :last-child {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 1680px) {
+    #footer {
+        bottom: 3.5em;
+        left: 3.5em;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    #footer {
+        bottom: 2em;
+        left: 2em;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    #footer {
+        bottom: 1.25em;
+        left: 1.25em;
+    }
+}
+
+@media screen and (max-height: 640px) {
+    #footer {
+        bottom: auto;
+        left: auto;
+        margin: 1em 0 0 0;
+        position: relative;
+    }
+}
