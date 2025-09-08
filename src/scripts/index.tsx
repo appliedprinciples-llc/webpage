@@ -1,4 +1,4 @@
-// src/main.tsx
+// src/index.tsx
 const form: HTMLFormElement = document.getElementById('contact-form') as HTMLFormElement;
 const result = document.getElementById('result');
 
